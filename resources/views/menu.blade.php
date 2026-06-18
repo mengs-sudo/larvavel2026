@@ -4,7 +4,7 @@
 
 @section('slider')
 <!-- Optional banner for menu page -->
-<section class="inner_page_slider" style="padding: 60px 0; background: #222831;">
+<section class="inner_page_slider" style="padding: 40px 0; background: #222831; margin-bottom: 0;">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
@@ -18,7 +18,7 @@
 
 @section('content')
 <!-- food section -->
-<section class="food_section layout_padding">
+<section class="food_section layout_padding" style="padding-top: 30px;">
     <div class="container">
         <div class="heading_container heading_center">
             <h2>

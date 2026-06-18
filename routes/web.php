@@ -28,3 +28,13 @@ Route::get('/register', function () {
     return view('auth.register');
 })->name('register');
 
+// Dashboard route (protected)
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+// Logout route
+Route::post('/logout', function () {
+    // Add your logout logic here
+    return redirect('/');
+})->name('logout');

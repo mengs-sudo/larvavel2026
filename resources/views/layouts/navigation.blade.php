@@ -1,4 +1,8 @@
-<header class="header_section">
+@php
+    $isAuthPage = request()->routeIs('login') || request()->routeIs('register');
+@endphp
+
+<header class="header_section" style="{{ $isAuthPage ? 'background: #222831; position: relative;' : '' }}">
   <div class="container">
     <nav class="navbar navbar-expand-lg custom_nav-container ">
       <a class="navbar-brand" href="{{ route('home') }}">
@@ -28,12 +32,34 @@
         </ul>
         
         <div class="user_option">
-          <!-- User icon with dropdown or link -->
-          <a href="{{ route('login') }}" class="user_link" title="Login / Register">
-            <i class="fa fa-user" aria-hidden="true"></i>
-          </a>
+          @auth
+            <a href="{{ route('dashboard') }}" class="user_link" title="Dashboard">
+              <i class="fa fa-user" aria-hidden="true"></i>
+            </a>
+            <span style="color: #fff; font-size: 14px; margin: 0 5px;">
+              {{ Auth::user()->name }}
+            </span>
+            <a href="#" class="order_online" style="background: #dc3545;" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+              Logout
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              @csrf
+            </form>
+          @else
+            <a href="{{ route('register') }}" class="user_link" title="Sign Up / Login">
+              <i class="fa fa-user" aria-hidden="true"></i>
+            </a>
+            <div class="auth_links" style="display: inline-flex; align-items: center; gap: 8px; margin: 0 10px;">
+              <a href="{{ route('login') }}" style="color: #fff; text-decoration: none; font-size: 14px; font-weight: 500;">
+                Login
+              </a>
+              <span style="color: #fff; opacity: 0.5;">|</span>
+              <a href="{{ route('register') }}" style="color: #ffbe33; text-decoration: none; font-size: 14px; font-weight: 500;">
+                Sign Up
+              </a>
+            </div>
+          @endauth
           
-         
           <!-- Cart -->
           <a class="cart_link" href="#">
             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
@@ -56,36 +82,6 @@
                   <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
                c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
                 </g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
-              </g>
-              <g>
               </g>
             </svg>
           </a>
