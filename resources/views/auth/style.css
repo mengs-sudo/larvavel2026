@@ -1,0 +1,22 @@
+/* Auth Pages Header Fix */
+.auth-page header.header_section {
+    background: #222831 !important;
+    position: relative !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Fix for auth page body */
+.auth-page .hero_area {
+    display: none;
+}
+
+/* Auth container spacing */
+.auth_section {
+    padding-top: 100px !important;
+    min-height: 90vh;
+}
+
+/* Make sure header stays dark on auth pages */
+body.auth-page header {
+    background: #222831 !important;
+}

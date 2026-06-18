@@ -1,6 +1,20 @@
 @extends('layouts.app')
 
-@section('title', 'About - Feane')
+@section('title', 'About Us - Feane')
+
+@section('slider')
+<!-- Optional banner for about page -->
+<section class="inner_page_slider" style="padding: 60px 0; background: #222831;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 style="color: #fff; font-size: 48px; font-weight: 700;">About Us</h1>
+                <p style="color: #fff; opacity: 0.8;">Learn more about our story and passion for food</p>
+            </div>
+        </div>
+    </div>
+</section>
+@endsection
 
 @section('content')
 <!-- about section -->
@@ -9,7 +23,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="img-box">
-                    <img src="{{ asset('images/about-img.png') }}" alt="About Us">
+                    <img src="{{ asset('images/about-img.png') }}" alt="About Feane">
                 </div>
             </div>
             <div class="col-md-6">
